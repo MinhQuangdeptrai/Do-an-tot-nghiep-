@@ -1,0 +1,334 @@
+/* ============================================================
+   DANH SÁCH PHÂN CÔNG THÀNH VIÊN
+   1. Minh Quang: Header, Nav, Tiêu đề, Chu-y Card, Footer, Thân bài
+   2. Thu Hà: Khối CLB nổi bật (Trang chủ)
+   3. Huỳnh Hương: Box thông tin & Gạch chân tiêu đề
+   4. Nhựt Nam: Danh sách và Card CLB (Grid)
+   5. Ngọc Tuyền: Định dạng nội dung chi tiết (List, Text)
+   ============================================================ */
+
+/* --- THIẾT LẬP CHUNG (Minh Quang) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: rgb(231, 231, 231);
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- HEADER & NAVIGATION (Minh Quang) --- */
+header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("anhbia.jpg") center / cover;
+  min-height: 480px;
+  position: relative;
+  color: white;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: rgba(0,0,0,0.65);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.logo span { color: white; }
+
+.nav-option a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-option a:hover { color: #ffd700; }
+
+.sdt {
+  background: #ffd700;
+  color: #111;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.sdt:hover {
+  background: #111;
+  color: #ffd700;
+}
+
+.Tieu-de {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.Tieu-de h1 {
+  font-size: 3rem;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+/* --- KHỐI TIỆN ÍCH TRÊN BANNER (Minh Quang) --- */
+.Chu-y {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  max-width: 1200px;
+  margin: -100px auto 5rem;
+  padding: 0 2rem;
+}
+
+.Chu-y-card {
+  background: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.Chu-y-card:hover {
+  background: black;
+  color: white;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.Chu-y-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.Chu-y-card a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0066cc;
+}
+
+.Chu-y-card:hover a { color: #ffd700; }
+
+/* --- BOX THÔNG TIN CHUNG (Huỳnh Hương) --- */
+.box-in4 {
+  display: block;
+  margin: 2rem;
+  background-color: #fafafa;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px grey;
+  padding: 20px;
+}
+
+.gioithieu {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+}
+
+.gioithieu::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background-color: #dfd447;
+}
+
+/* --- NỘI DUNG CHI TIẾT & LIST (Ngọc Tuyền) --- */
+.box-in4 h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: 700;
+}
+
+.box-in4 ul {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.box-in4 ul li {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: #444;
+}
+
+/* --- DANH SÁCH CLB GRID (Nhựt Nam) --- */
+.clubs {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.club-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.club-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.25s ease;
+}
+
+.club-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.club-card:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+}
+
+.club-card:hover p { color: #ddd; }
+
+/* --- TRÌNH BÀY CLB CHI TIẾT (ẢNH BÊN PHẢI) (Minh Quang) --- */
+.than-bai {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  min-height: 80vh;
+}
+
+.Noi-dung-gioi-thieu {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Tieu-de-2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  font-weight: 800;
+}
+
+.Tieu-de-2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ffd700;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.Thong-tin-gioi-thieu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.Thong-tin-gioi-thieu:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-color: #ffd700;
+}
+
+.clb-text { flex: 1; }
+
+.clb-text h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #ffd700;
+  padding-left: 15px;
+}
+
+.clb-text ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.clb-text ul li {
+  position: relative;
+  padding: 5px 0 5px 30px;
+  color: #444;
+}
+
+.clb-text ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.clb-image img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- FOOTER (Minh Quang) --- */
+footer {
+  background: #111;
+  color: #999;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 5px solid #ffd700;
+  font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE (Tương thích thiết bị di động) --- */
+@media (max-width: 768px) {
+  nav { padding: 1rem 2rem; }
+  .Tieu-de h1 { font-size: 2rem; }
+  
+  .than-bai { padding: 30px 5%; }
+  .Tieu-de-2 { font-size: 1.8rem; }
+
+  .Thong-tin-gioi-thieu {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .clb-image {
+    order: -1; /* Đưa ảnh lên trước chữ trên mobile */
+  }
+
+  .clb-image img {
+    width: 100%;
+    height: auto;
+  }
+}
